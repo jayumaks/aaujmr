@@ -1,0 +1,369 @@
+/* ================================================================
+   AAUJMR — AAUJMR
+   Global Design System
+================================================================ */
+
+/* ─── Reset ─────────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ─── Design tokens ─────────────────────────────────────────── */
+:root {
+    /* Brand palette — Orange & Gold */
+    --maroon:        #76aaf8;
+    --maroon-dark:   #0595a8;
+    --maroon-light:  #25e6ff;
+    --maroon-faint:  rgba(217, 74, 7, 0.06);
+    --gold:          #070501;
+    --gold-light:    #141107;
+    --gold-dark:     #0f0c04;
+    --gold-faint:    rgba(201, 168, 76, 0.12);
+
+    /* Backgrounds */
+    --bg:            #FDFBF7;
+    --bg-card:       #FFFFFF;
+    --bg-alt:        #FFF8F0;
+
+    /* Text */
+    --text-primary:   #231A0C;
+    --text-secondary: #5C4835;
+    --text-muted:     #9E8A72;
+
+    /* UI chrome */
+    --border:        #E8D5C0;
+    --border-light:  #F5EBE0;
+
+    /* Shadows */
+    --shadow-sm:  0 1px 4px rgba(217, 74, 7, 0.07);
+    --shadow:     0 3px 14px rgba(217, 74, 7, 0.10);
+    --shadow-lg:  0 6px 28px rgba(217, 74, 7, 0.15);
+
+    /* Typography */
+    --font-heading: 'Playfair Display', Georgia, 'Times New Roman', serif;
+    --font-body:    'Source Sans 3', 'Helvetica Neue', Arial, sans-serif;
+
+    /* Spacing scale */
+    --space-xs:  0.4rem;
+    --space-sm:  0.875rem;
+    --space-md:  1.5rem;
+    --space-lg:  2.5rem;
+    --space-xl:  4rem;
+
+    /* Layout */
+    --container:  1180px;
+    --radius:     6px;
+    --radius-lg:  12px;
+    --transition: 0.22s ease;
+}
+
+/* ─── Base ───────────────────────────────────────────────────── */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: 1.65;
+    color: var(--text-primary);
+    background: var(--bg);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+}
+
+a {
+    color: var(--maroon);
+    text-decoration: none;
+    transition: color var(--transition);
+}
+
+a:hover {
+    color: var(--maroon-light);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* ─── Container ──────────────────────────────────────────────── */
+.container {
+    width: 100%;
+    max-width: var(--container);
+    margin-inline: auto;
+    padding-inline: 1.5rem;
+}
+
+/* ─── Typography ─────────────────────────────────────────────── */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--text-primary);
+}
+
+h1 { font-size: clamp(1.75rem, 4vw, 2.5rem); }
+h2 { font-size: clamp(1.4rem, 3vw, 2rem); }
+h3 { font-size: clamp(1.15rem, 2.5vw, 1.5rem); }
+h4 { font-size: 1.1rem; }
+
+/* ─── Buttons ────────────────────────────────────────────────── */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.625rem 1.375rem;
+    border: none;
+    border-radius: var(--radius);
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition);
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.btn-primary {
+    background: var(--maroon);
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background: var(--maroon-dark);
+    color: #fff;
+    transform: translateY(-1px);
+    box-shadow: var(--shadow);
+}
+
+.btn-gold {
+    background: var(--gold);
+    color: var(--maroon-dark);
+}
+
+.btn-gold:hover {
+    background: var(--gold-dark);
+    color: var(--maroon-dark);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow);
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--maroon);
+    border: 1.5px solid var(--maroon);
+}
+
+.btn-outline:hover {
+    background: var(--maroon);
+    color: #fff;
+    transform: translateY(-1px);
+}
+
+.btn-sm {
+    padding: 0.4rem 0.9rem;
+    font-size: 0.875rem;
+}
+
+.btn-danger {
+    background: #b91c3c;
+    color: #fff;
+}
+
+.btn-danger:hover {
+    background: #9b1533;
+    color: #fff;
+}
+
+/* ─── Page header banner (shared across content pages) ──────── */
+.page-banner {
+    background: linear-gradient(135deg, var(--maroon-dark) 0%, var(--maroon) 60%, var(--maroon-light) 100%);
+    color: #fff;
+    padding: 3rem 0 2.5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.page-banner::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+.page-banner h1 {
+    color: #fff;
+    margin-bottom: 0.5rem;
+}
+
+.page-banner .subtitle {
+    color: rgba(255,255,255,0.75);
+    font-size: 1rem;
+}
+
+/* ─── Content page wrapper (consistent inner padding) ───────── */
+.content-page {
+    padding: var(--space-lg) 0 var(--space-xl);
+}
+
+/* ─── Card component ─────────────────────────────────────────── */
+.card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+    transition: box-shadow var(--transition), transform var(--transition);
+}
+
+.card:hover {
+    box-shadow: var(--shadow);
+    transform: translateY(-2px);
+}
+
+/* ─── Badge (category label) ─────────────────────────────────── */
+.badge {
+    display: inline-block;
+    padding: 0.2rem 0.65rem;
+    border-radius: 20px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+}
+
+.badge-gold {
+    background: var(--gold-faint);
+    color: var(--gold-dark);
+    border: 1px solid rgba(201, 168, 76, 0.3);
+}
+
+.badge-maroon {
+    background: var(--maroon-faint);
+    color: var(--maroon);
+    border: 1px solid rgba(217, 74, 7, 0.18);
+}
+
+/* ─── Forms (shared across admin/upload/edit) ────────────────── */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.form-group label {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.form-group label.required::after {
+    content: ' *';
+    color: var(--maroon);
+}
+
+.form-control {
+    width: 100%;
+    padding: 0.65rem 0.875rem;
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    color: var(--text-primary);
+    background: var(--bg-card);
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius);
+    transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: var(--maroon);
+    box-shadow: 0 0 0 3px rgba(217, 74, 7, 0.10);
+}
+
+textarea.form-control {
+    resize: vertical;
+    min-height: 110px;
+}
+
+select.form-control {
+    cursor: pointer;
+}
+
+/* ─── Alert messages ─────────────────────────────────────────── */
+.alert {
+    padding: 0.875rem 1.25rem;
+    border-radius: var(--radius);
+    margin-bottom: var(--space-md);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.alert-error {
+    background: #fef2f2;
+    color: #991b1b;
+    border: 1px solid #fecaca;
+}
+
+.alert-success {
+    background: #f0fdf4;
+    color: #166534;
+    border: 1px solid #bbf7d0;
+}
+
+.alert ul {
+    margin: 0;
+    padding-left: 1.25rem;
+}
+
+/* ─── Divider ────────────────────────────────────────────────── */
+.divider {
+    height: 1px;
+    background: var(--border-light);
+    margin: var(--space-lg) 0;
+}
+
+.divider-gold {
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    margin: var(--space-md) 0;
+}
+
+/* ─── Utilities ──────────────────────────────────────────────── */
+.text-muted    { color: var(--text-muted); }
+.text-secondary{ color: var(--text-secondary); }
+.text-center   { text-align: center; }
+.mt-sm  { margin-top: var(--space-sm); }
+.mt-md  { margin-top: var(--space-md); }
+.mt-lg  { margin-top: var(--space-lg); }
+.mb-sm  { margin-bottom: var(--space-sm); }
+.mb-md  { margin-bottom: var(--space-md); }
+.gap-sm { gap: var(--space-sm); }
+.flex   { display: flex; }
+.flex-center { display: flex; align-items: center; justify-content: center; }
+
+/* ─── Responsive breakpoints ─────────────────────────────────── */
+@media (max-width: 768px) {
+    .container {
+        padding-inline: 1rem;
+    }
+
+    .page-banner {
+        padding: 2rem 0 1.75rem;
+    }
+
+    .content-page {
+        padding: var(--space-md) 0 var(--space-lg);
+    }
+}

@@ -1,0 +1,342 @@
+/* ================================================================
+   AAUJMR — Header / Navigation
+================================================================ */
+
+/* ─── Top bar (faculty / admin links) ───────────────────────── */
+.header-top {
+    background: var(--maroon-dark);
+    padding: 0.35rem 0;
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.7);
+    position: sticky;
+}
+
+.header-top .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-top .header-admin-bar {
+    display: flex;
+    gap: 1rem;
+}
+
+.header-top a {
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    transition: color var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.header-top a:hover {
+    color: var(--gold-light);
+}
+
+/* ─── Brand bar ──────────────────────────────────────────────── */
+.header-brand {
+    background: var(--maroon);
+    padding: 1rem 0;
+    border-bottom: 2px solid var(--gold);
+}
+
+.brand-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    color: #fff;
+    text-decoration: none;
+}
+
+.brand-link:hover {
+    color: var(--gold-light);
+}
+
+.brand-abbr {
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--gold);
+    letter-spacing: 2px;
+    line-height: 1;
+    min-width: 64px;
+}
+
+.brand-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+}
+
+.brand-title {
+    font-family: var(--font-heading);
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #fff;
+    line-height: 1.2;
+}
+
+.brand-issn {
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.65);
+    letter-spacing: 0.04em;
+}
+
+/* ─── Main nav ───────────────────────────────────────────────── */
+.main-nav {
+    background: var(--bg-card);
+    box-shadow: 0 2px 8px rgba(217, 74, 7, 0.08);
+    position: sticky;
+    top: 0;
+    z-index: 900;
+}
+
+.main-nav .container {
+    display: flex;
+    align-items: stretch;
+    gap: 0;
+}
+
+.nav-list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex: 1;
+}
+
+.nav-list > li > a,
+.nav-list > li > .dropdown-trigger {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.875rem 1rem;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: color var(--transition), border-color var(--transition), background var(--transition);
+    text-decoration: none;
+    font-family: var(--font-body);
+}
+
+.nav-list > li > a:hover,
+.nav-list > li > .dropdown-trigger:hover {
+    color: var(--maroon);
+    border-bottom-color: var(--gold);
+    background: var(--bg-alt);
+}
+
+.nav-list > li.active > a {
+    color: var(--maroon);
+    border-bottom-color: var(--maroon);
+}
+
+.nav-list > li > a.active {
+    color: var(--maroon);
+    border-bottom-color: var(--maroon);
+}
+
+.dropdown-panel a.active {
+    color: var(--maroon);
+    font-weight: 600;
+}
+
+/* ─── Dropdown ───────────────────────────────────────────────── */
+.has-dropdown {
+    position: relative;
+}
+
+.dropdown-trigger .fa-chevron-down {
+    font-size: 0.7rem;
+    transition: transform var(--transition);
+}
+
+.has-dropdown.open .dropdown-trigger .fa-chevron-down,
+.has-dropdown:focus-within .dropdown-trigger .fa-chevron-down {
+    transform: rotate(180deg);
+}
+
+.dropdown-panel {
+    display: none;
+    position: absolute;
+    top: calc(100% + 2px);
+    left: 0;
+    background: var(--bg-card);
+    min-width: 210px;
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-lg);
+    list-style: none;
+    padding: 0.4rem 0;
+    z-index: 1000;
+}
+
+.has-dropdown:hover .dropdown-panel,
+.has-dropdown.open .dropdown-panel {
+    display: block;
+}
+
+.dropdown-panel li a {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.65rem 1.1rem;
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    transition: all var(--transition);
+    text-decoration: none;
+}
+
+.dropdown-panel li a:hover {
+    background: var(--bg-alt);
+    color: var(--maroon);
+    padding-left: 1.4rem;
+}
+
+.dropdown-panel li a i {
+    width: 1rem;
+    text-align: center;
+    color: var(--gold-dark);
+}
+
+/* ─── Submit CTA in nav ──────────────────────────────────────── */
+.nav-submit-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.5rem 1.1rem;
+    margin: auto 0 auto auto;
+    background: var(--maroon);
+    color: #fff !important;
+    border-radius: var(--radius);
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all var(--transition);
+    white-space: nowrap;
+}
+
+.nav-submit-btn:hover {
+    background: var(--maroon-dark);
+    color: #fff !important;
+    transform: translateY(-1px);
+    box-shadow: var(--shadow);
+}
+
+/* ─── Mobile toggle ──────────────────────────────────────────── */
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.875rem 0;
+    margin-left: auto;
+}
+
+.nav-toggle span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--maroon);
+    border-radius: 2px;
+    transition: all var(--transition);
+}
+
+.nav-toggle.active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.nav-toggle.active span:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+}
+
+.nav-toggle.active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ─── Mobile styles ──────────────────────────────────────────── */
+@media (max-width: 900px) {
+    .nav-toggle {
+        display: flex;
+    }
+
+    .main-nav .container {
+        flex-wrap: wrap;
+        padding-right: 1rem;
+    }
+
+    .nav-list {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        border-top: 1px solid var(--border-light);
+        padding: 0.5rem 0 1rem;
+    }
+
+    .nav-list.open {
+        display: flex;
+    }
+
+    .nav-list > li > a,
+    .nav-list > li > .dropdown-trigger {
+        padding: 0.75rem 1rem;
+        border-bottom: none;
+        border-left: 3px solid transparent;
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .nav-list > li > a:hover,
+    .nav-list > li > .dropdown-trigger:hover {
+        border-left-color: var(--gold);
+        border-bottom: none;
+    }
+
+    .dropdown-panel {
+        position: static;
+        box-shadow: none;
+        border: none;
+        border-radius: 0;
+        background: var(--bg-alt);
+        padding: 0;
+        min-width: 0;
+    }
+
+    .has-dropdown.open .dropdown-panel,
+    .has-dropdown:hover .dropdown-panel {
+        display: block;
+    }
+
+    .dropdown-panel li a {
+        padding-left: 2.5rem;
+    }
+
+    .nav-submit-btn {
+        display: none;
+    }
+
+    .header-top .header-faculty {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .brand-abbr {
+        font-size: 1.75rem;
+    }
+
+    .brand-title {
+        font-size: 0.9rem;
+    }
+}

@@ -1,0 +1,137 @@
+/* ================================================================
+   AAUJMR — Article Detail (article.css)
+================================================================ */
+
+.article-detail-layout {
+    display: grid;
+    grid-template-columns: 1fr 280px;
+    gap: 2.5rem;
+    align-items: start;
+}
+
+/* ─── Body ───────────────────────────────────────────────────── */
+.article-body {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.detail-block {}
+
+.detail-label {
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--gold-dark);
+    margin-bottom: 0.625rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.detail-value {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.abstract-text {
+    background: var(--bg-alt);
+    border-left: 3px solid var(--gold);
+    padding: 1.25rem 1.5rem;
+    border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+    font-size: 0.975rem;
+    color: var(--text-secondary);
+    line-height: 1.75;
+    font-style: italic;
+}
+
+/* ─── PDF block ──────────────────────────────────────────────── */
+.pdf-download-block {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-lg);
+    padding: 1.25rem 1.5rem;
+    box-shadow: var(--shadow-sm);
+}
+
+.pdf-icon {
+    font-size: 2.5rem;
+    color: var(--maroon);
+    flex-shrink: 0;
+}
+
+.pdf-label {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+}
+
+/* ─── Meta sidebar ───────────────────────────────────────────── */
+.article-meta-sidebar {
+    position: sticky;
+    top: 70px;
+}
+
+.meta-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+}
+
+.meta-card-title {
+    background: var(--maroon);
+    color: #fff;
+    padding: 0.875rem 1.25rem;
+    font-size: 0.875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+.meta-list {
+    padding: 1rem 1.25rem;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.5rem 1rem;
+}
+
+.meta-list dt {
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+    align-self: baseline;
+    padding-top: 0.1rem;
+}
+
+.meta-list dd {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    word-break: break-word;
+    border-bottom: 1px solid var(--border-light);
+    padding-bottom: 0.5rem;
+    margin-bottom: 0.25rem;
+}
+
+.meta-list dd:last-child {
+    border-bottom: none;
+}
+
+/* ─── Responsive ─────────────────────────────────────────────── */
+@media (max-width: 768px) {
+    .article-detail-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .article-meta-sidebar {
+        position: static;
+    }
+}

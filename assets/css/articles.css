@@ -1,0 +1,237 @@
+/* ================================================================
+   AAUJMR — Articles Listing (articles.css)
+================================================================ */
+
+/* ─── Layout ─────────────────────────────────────────────────── */
+.articles-layout {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 2.5rem;
+    align-items: start;
+}
+
+/* ─── Category sidebar (shared with archive) ─────────────────── */
+.cat-sidebar {
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-lg);
+    padding: 1.25rem;
+    position: sticky;
+    top: 70px;
+}
+
+.sidebar-heading {
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+    margin-bottom: 0.875rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.cat-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.cat-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0.75rem;
+    border-radius: var(--radius);
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: all var(--transition);
+}
+
+.cat-link:hover {
+    background: var(--bg-alt);
+    color: var(--maroon);
+}
+
+.cat-link.active {
+    background: var(--maroon-faint);
+    color: var(--maroon);
+    font-weight: 600;
+}
+
+.cat-count {
+    background: var(--border-light);
+    color: var(--text-muted);
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 0.1rem 0.45rem;
+    border-radius: 20px;
+    min-width: 22px;
+    text-align: center;
+}
+
+.cat-link.active .cat-count {
+    background: rgba(217, 74, 7, 0.12);
+    color: var(--maroon);
+}
+
+/* ─── Article list ───────────────────────────────────────────── */
+.result-count {
+    font-size: 0.875rem;
+}
+
+.article-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    padding: 0;
+}
+
+.article-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-left: 3px solid var(--gold);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    transition: box-shadow var(--transition), transform var(--transition);
+}
+
+.article-card:hover {
+    box-shadow: var(--shadow);
+    transform: translateX(3px);
+}
+
+.article-card .badge {
+    margin-bottom: 0.75rem;
+}
+
+.article-title {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    line-height: 1.35;
+}
+
+.article-title a {
+    color: var(--maroon-dark);
+    text-decoration: none;
+}
+
+.article-title a:hover {
+    color: var(--maroon);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.article-authors {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: baseline;
+    gap: 0.4rem;
+}
+
+.article-abstract {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 0.875rem;
+    border-left: 2px solid var(--border-light);
+    padding-left: 0.875rem;
+}
+
+.article-meta {
+    display: flex;
+    gap: 1.5rem;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+}
+
+.article-meta span {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+.article-actions {
+    display: flex;
+    gap: 0.625rem;
+    flex-wrap: wrap;
+}
+
+/* ─── Responsive ─────────────────────────────────────────────── */
+@media (max-width: 768px) {
+    .articles-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .cat-sidebar {
+        position: static;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        align-items: center;
+    }
+
+    .sidebar-heading {
+        margin: 0;
+        white-space: nowrap;
+    }
+
+    .cat-list {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .article-actions {
+        flex-direction: column;
+    }
+
+    .article-actions .btn {
+        justify-content: center;
+    }
+}
+
+/* ─── Pagination ─────────────────────────────────────────── */
+.pagination {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: 2rem;
+    justify-content: center;
+}
+
+.page-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 2.25rem;
+    height: 2.25rem;
+    padding: 0 0.75rem;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    font-size: 0.875rem;
+    color: var(--text);
+    text-decoration: none;
+    transition: all var(--transition);
+}
+
+.page-btn:hover {
+    border-color: var(--maroon);
+    color: var(--maroon);
+}
+
+.page-btn.active {
+    background: var(--maroon);
+    border-color: var(--maroon);
+    color: #fff;
+    font-weight: 600;
+    pointer-events: none;
+}

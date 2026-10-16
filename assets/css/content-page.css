@@ -1,0 +1,349 @@
+/* ================================================================
+   AAUJMR — Shared Prose / Content Pages (content-page.css)
+   Used by: aims-scope, guide, submit, contact, publication-fees,
+            ethics-policies
+================================================================ */
+
+/* ─── Layout ─────────────────────────────────────────────────── */
+.prose-layout {
+    display: grid;
+    grid-template-columns: 1fr 260px;
+    gap: 3rem;
+    align-items: start;
+}
+
+/* ─── Main prose column ──────────────────────────────────────── */
+.prose {
+    max-width: 100%;
+}
+
+.prose-section {
+    margin-bottom: 2.5rem;
+    padding-bottom: 2.5rem;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.prose-section:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.prose-section h2 {
+    font-family: var(--font-heading);
+    font-size: 1.35rem;
+    color: var(--maroon-dark);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--gold-faint);
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.prose-section h3, .prose-section h4 {
+    color: var(--maroon);
+    margin: 1.25rem 0 0.5rem;
+}
+
+.prose-section p {
+    color: var(--text-secondary);
+    line-height: 1.75;
+    margin-bottom: 0.875rem;
+}
+
+.prose-section ul, .prose-section ol {
+    padding-left: 1.5rem;
+    color: var(--text-secondary);
+    line-height: 1.75;
+}
+
+.prose-section li {
+    margin-bottom: 0.4rem;
+}
+
+.note {
+    background: var(--bg-alt);
+    border-left: 3px solid var(--gold);
+    padding: 0.75rem 1rem;
+    border-radius: 0 var(--radius) var(--radius) 0;
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    margin-top: 0.875rem;
+}
+
+.note i {
+    color: var(--gold-dark);
+    flex-shrink: 0;
+}
+
+/* ─── Scope list inside aims-scope ──────────────────────────── */
+.scope-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin-top: 1rem;
+}
+
+.scope-item {
+    display: flex;
+    gap: 1rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-lg);
+    padding: 1.1rem 1.25rem;
+}
+
+.scope-item-icon {
+    width: 38px;
+    height: 38px;
+    background: var(--maroon-faint);
+    border-radius: var(--radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.scope-item-icon i {
+    color: var(--maroon);
+    font-size: 1rem;
+}
+
+.scope-item h4 {
+    color: var(--maroon-dark);
+    margin-bottom: 0.5rem;
+}
+
+.scope-item ul {
+    padding-left: 1.1rem;
+    font-size: 0.875rem;
+    color: var(--text-muted);
+}
+
+/* ─── Fee table ──────────────────────────────────────────────── */
+.fee-table-wrap {
+    overflow-x: auto;
+    margin: 1rem 0;
+}
+
+.fee-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+}
+
+.fee-table th {
+    background: var(--maroon);
+    color: #fff;
+    padding: 0.75rem 1rem;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.85rem;
+    letter-spacing: 0.03em;
+}
+
+.fee-table td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--border-light);
+    color: var(--text-secondary);
+}
+
+.fee-table tr:nth-child(even) td {
+    background: var(--bg-alt);
+}
+
+/* ─── Submit channels ────────────────────────────────────────── */
+.channel-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.channel-card {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-lg);
+    padding: 1.1rem 1.25rem;
+    text-decoration: none;
+    color: inherit;
+    transition: all var(--transition);
+}
+
+.channel-card:hover {
+    border-color: var(--maroon-light);
+    box-shadow: var(--shadow);
+    color: inherit;
+}
+
+.channel-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    flex-shrink: 0;
+}
+
+.channel-icon.whatsapp { background: #dcfce7; color: #16a34a; }
+.channel-icon.phone    { background: var(--maroon-faint); color: var(--maroon); }
+.channel-icon.email    { background: var(--gold-faint); color: var(--gold-dark); }
+
+.channel-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+    margin-bottom: 0.2rem;
+}
+
+.channel-value {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+/* ─── Contact info block ─────────────────────────────────────── */
+.contact-block {
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    margin-top: 1rem;
+}
+
+.contact-block dt {
+    font-weight: 700;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text-muted);
+    margin-top: 0.75rem;
+}
+
+.contact-block dt:first-child { margin-top: 0; }
+
+.contact-block dd {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 0.25rem;
+}
+
+.contact-block a {
+    color: var(--maroon);
+}
+
+/* ─── Sidebar widgets ────────────────────────────────────────── */
+.prose-sidebar {
+    position: sticky;
+    top: 70px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.sidebar-widget {
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+}
+
+.sidebar-widget h3 {
+    background: var(--maroon);
+    color: #fff;
+    padding: 0.75rem 1.1rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    font-family: var(--font-body);
+}
+
+.sidebar-widget ul {
+    list-style: none;
+    padding: 0.5rem 0;
+}
+
+.sidebar-widget ul li a {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.55rem 1.1rem;
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: all var(--transition);
+}
+
+.sidebar-widget ul li a:hover {
+    background: var(--bg-alt);
+    color: var(--maroon);
+    padding-left: 1.35rem;
+}
+
+.sidebar-widget ul li a i {
+    width: 1rem;
+    text-align: center;
+    color: var(--gold-dark);
+}
+
+.sidebar-widget p {
+    padding: 0.5rem 1.1rem;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+/* ─── Guide-specific: section with icon label ────────────────── */
+.guide-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: var(--maroon);
+    color: #fff;
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--radius);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 1.25rem;
+}
+
+/* ─── Responsive ─────────────────────────────────────────────── */
+@media (max-width: 900px) {
+    .prose-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .prose-sidebar {
+        position: static;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .sidebar-widget {
+        flex: 1 1 280px;
+    }
+}
+
+@media (max-width: 540px) {
+    .prose-sidebar {
+        flex-direction: column;
+    }
+
+    .sidebar-widget {
+        flex: none;
+    }
+}

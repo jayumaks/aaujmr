@@ -1,0 +1,35 @@
+# AAUJMR Apache routing
+RewriteEngine On
+
+# Pass through real files and directories (CSS, JS, images, uploads, etc.)
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Admin routes
+RewriteRule ^admin/?$ src/admin/admin.php [NC,L]
+RewriteRule ^admin-settings/?$ src/admin/admin-settings.php [NC,L]
+RewriteRule ^edit-article/?$ src/edit-article/edit-article.php [NC,L]
+RewriteRule ^upload-article/?$ src/upload/upload-article.php [NC,L]
+
+# Auth routes
+RewriteRule ^login/?$ src/auth/login.php [NC,L]
+RewriteRule ^logout/?$ src/auth/logout.php [NC,L]
+
+# Public routes
+RewriteRule ^aims-scope/?$ src/aims-scope/aims-scope.php [NC,L]
+RewriteRule ^archive/?$ src/archive/archive.php [NC,L]
+RewriteRule ^board/?$ src/board/board.php [NC,L]
+RewriteRule ^contact/?$ src/contact/contact.php [NC,L]
+RewriteRule ^current-issue/?$ src/current-issue/current-issue.php [NC,L]
+RewriteRule ^ethics-policies/?$ src/ethics/ethics-policies.php [NC,L]
+RewriteRule ^guide/?$ src/guide/guide.php [NC,L]
+RewriteRule ^publication-fees/?$ src/publication/publication-fees.php [NC,L]
+RewriteRule ^submit/?$ src/submit/submit.php [NC,L]
+RewriteRule ^article/?$ src/articles/article.php [NC,L]
+RewriteRule ^articles/?$ src/articles/articles.php [NC,L]
+
+# Prevent direct access to the .htaccess file itself
+<Files .htaccess>
+    Require all denied
+</Files>

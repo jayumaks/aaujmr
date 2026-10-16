@@ -1,0 +1,231 @@
+/* ================================================================
+   AAUJMR — Admin Dashboard (admin.css)
+================================================================ */
+
+/* ─── Stats bar ──────────────────────────────────────────────── */
+.admin-stats {
+    display: flex;
+    gap: 1.25rem;
+    margin-bottom: 2rem;
+}
+
+.admin-stat {
+    flex: 1;
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-lg);
+    padding: 1.25rem 1.5rem;
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.admin-stat-num {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--maroon);
+    line-height: 1;
+}
+
+.admin-stat-label {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+/* ─── Section wrapper ────────────────────────────────────────── */
+.admin-section {
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-lg);
+    margin-bottom: 2rem;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+}
+
+.admin-section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid var(--border-light);
+    background: var(--bg-alt);
+}
+
+.admin-section-header h2 {
+    font-size: 1rem;
+    font-family: var(--font-body);
+    font-weight: 700;
+    color: var(--maroon-dark);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* ─── Table ──────────────────────────────────────────────────── */
+.table-wrapper {
+    overflow-x: auto;
+}
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.875rem;
+}
+
+.admin-table thead th {
+    background: var(--maroon);
+    color: #fff;
+    padding: 0.75rem 1rem;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+}
+
+.admin-table thead th input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    accent-color: var(--gold);
+}
+
+.admin-table tbody td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--border-light);
+    color: var(--text-secondary);
+    vertical-align: middle;
+}
+
+.admin-table tbody tr:last-child td { border-bottom: none; }
+.admin-table tbody tr:hover td { background: var(--bg-alt); }
+
+.td-title { max-width: 280px; }
+.td-actions { white-space: nowrap; }
+
+/* ─── Icon buttons ───────────────────────────────────────────── */
+.icon-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius);
+    background: transparent;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all var(--transition);
+    font-size: 0.85rem;
+    text-decoration: none;
+}
+
+.icon-btn:hover {
+    border-color: var(--maroon);
+    color: var(--maroon);
+    background: var(--maroon-faint);
+}
+
+.icon-btn.danger:hover {
+    border-color: #b91c1c;
+    color: #b91c1c;
+    background: #fef2f2;
+}
+
+/* ─── Bulk actions bar ───────────────────────────────────────── */
+.bulk-actions {
+    padding: 0.75rem 1.5rem;
+    border-top: 1px solid var(--border-light);
+    background: var(--bg-alt);
+}
+
+/* ─── Board add form ─────────────────────────────────────────── */
+.board-add-form {
+    border-bottom: 1px solid var(--border-light);
+}
+
+.board-add-form > summary {
+    padding: 0.875rem 1.5rem;
+    cursor: pointer;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--maroon);
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    list-style: none;
+    transition: background var(--transition);
+}
+
+.board-add-form > summary::-webkit-details-marker { display: none; }
+
+.board-add-form > summary:hover { background: var(--maroon-faint); }
+
+.board-add-inner {
+    padding: 1.25rem 1.5rem;
+    background: var(--bg-alt);
+    border-top: 1px solid var(--border-light);
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0 !important;
+}
+
+/* ─── Form grid layouts ──────────────────────────────────────── */
+.form-row-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.form-row-3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.form-actions-bar {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-light);
+}
+
+/* ─── Status indicators ──────────────────────────────────────── */
+.status-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin-right: 0.4rem;
+    vertical-align: middle;
+}
+
+.status-dot.active   { background: #16a34a; }
+.status-dot.inactive { background: #9ca3af; }
+
+.row-inactive td { opacity: 0.5; }
+
+/* ─── Responsive ─────────────────────────────────────────────── */
+@media (max-width: 900px) {
+    .admin-stats { flex-wrap: wrap; }
+    .admin-stat  { flex: 1 1 calc(50% - 0.625rem); }
+}
+
+@media (max-width: 600px) {
+    .admin-stat  { flex: 1 1 100%; }
+    .form-row-2,
+    .form-row-3  { grid-template-columns: 1fr; }
+    .form-actions-bar { flex-direction: column; }
+}

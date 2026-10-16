@@ -1,0 +1,28 @@
+AAUJMR — START HERE (XAMPP)
+============================
+
+1. Install XAMPP.
+2. Start Apache and MySQL in XAMPP Control Panel.
+3. Extract this folder to:
+   C:\xampp\htdocs\aaujmr\
+4. Open:
+   http://localhost/aaujmr/install.php
+5. Leave these values for a normal XAMPP setup:
+   MySQL Host: localhost
+   Database Name: aaujmr
+   Database User: root
+   Database Password: blank
+   Site URL Path: /aaujmr
+6. Enter your own admin username and password.
+7. Click Install AAUJMR.
+8. Open:
+   http://localhost/aaujmr/
+
+The installer creates/configures the MySQL database, imports the journal data,
+loads the editorial board and creates the admin account. You do NOT need to
+manually import the SQL files for a fresh XAMPP installation.
+
+Admin:
+   http://localhost/aaujmr/login
+
+For cPanel, see INSTALLATION.md.

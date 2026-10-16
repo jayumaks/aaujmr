@@ -1,0 +1,75 @@
+/* ================================================================
+   AAUJMR — Upload / Edit Article (upload-article.css)
+   Admin article form — uses design tokens from index.css
+================================================================ */
+
+/* ─── Page wrapper ───────────────────────────────────────────── */
+.upload-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* ─── Form card ──────────────────────────────────────────────── */
+.upload-article-form {
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    box-shadow: var(--shadow-sm);
+}
+
+/* ─── Form grid layouts (shared with admin.css) ──────────────── */
+.form-row-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.form-row-3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+}
+
+/* ─── Form actions bar ───────────────────────────────────────── */
+.form-actions-bar {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 1.75rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-light);
+}
+
+/* ─── File input ─────────────────────────────────────────────── */
+input[type="file"].form-control {
+    padding: 0.5rem 0.875rem;
+    cursor: pointer;
+}
+
+input[type="file"].form-control::-webkit-file-upload-button {
+    padding: 0.35rem 0.875rem;
+    background: var(--maroon);
+    color: #fff;
+    border: none;
+    border-radius: var(--radius);
+    cursor: pointer;
+    font-size: 0.875rem;
+    margin-right: 0.75rem;
+    transition: background var(--transition);
+}
+
+input[type="file"].form-control::-webkit-file-upload-button:hover {
+    background: var(--maroon-dark);
+}
+
+/* ─── Responsive ─────────────────────────────────────────────── */
+@media (max-width: 768px) {
+    .form-row-2,
+    .form-row-3 {
+        grid-template-columns: 1fr;
+    }
+
+    .form-actions-bar {
+        flex-direction: column;
+    }
+}

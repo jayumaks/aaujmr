@@ -1,0 +1,126 @@
+/* ================================================================
+   AAUJMR — Archive (archive.css)
+================================================================ */
+
+/* ─── Layout ─────────────────────────────────────────────────── */
+.archive-layout {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 2.5rem;
+    align-items: start;
+}
+
+.archive-main {}
+
+.intro-text {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.65;
+    padding: 0.875rem 1.1rem;
+    background: var(--bg-alt);
+    border-left: 3px solid var(--gold);
+    border-radius: 0 var(--radius) var(--radius) 0;
+    margin-bottom: var(--space-lg);
+}
+
+/* ─── Issue grid ─────────────────────────────────────────────── */
+.issue-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.issue-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    transition: all var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.issue-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--maroon), var(--gold));
+    transform: scaleX(0);
+    transition: transform var(--transition);
+}
+
+.issue-card:hover {
+    border-color: var(--maroon-light);
+    box-shadow: var(--shadow);
+    transform: translateY(-3px);
+    color: inherit;
+}
+
+.issue-card:hover::before {
+    transform: scaleX(1);
+}
+
+.issue-vol {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--maroon);
+    margin-bottom: 0.2rem;
+}
+
+.issue-no {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.25rem;
+}
+
+.issue-year {
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: var(--text-muted);
+    margin-top: auto;
+    padding-top: 0.75rem;
+}
+
+.issue-arrow {
+    position: absolute;
+    bottom: 1.1rem;
+    right: 1.1rem;
+    font-size: 0.75rem;
+    color: var(--border);
+    transition: color var(--transition);
+}
+
+.issue-card:hover .issue-arrow {
+    color: var(--maroon);
+}
+
+/* ─── Responsive ─────────────────────────────────────────────── */
+@media (max-width: 768px) {
+    .archive-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .cat-sidebar {
+        position: static;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        align-items: center;
+    }
+
+    .cat-list {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .issue-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+}

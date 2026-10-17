@@ -9,7 +9,7 @@ define('DB_NAME', 'aauekpo5_aaujmr');
 define('SITE_NAME', 'Ambrose Alli University Journal of Medical Research');
 define('SITE_ABBR', 'AAUJMR');
 define('SITE_ISSN', '');
-define('SITE_URL', '/aaujmr');
+define('SITE_URL', '');
 
 const CATEGORIES = [
     'Basic Medical Sciences',

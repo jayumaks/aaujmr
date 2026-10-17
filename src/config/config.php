@@ -2,9 +2,9 @@
 declare(strict_types=1);
 
 define('DB_HOST', 'localhost');
-define('DB_USER', 'root');
-define('DB_PASS', '');
-define('DB_NAME', 'aaujmr');
+define('DB_USER', 'aauekpo5_aaujmruser');
+define('DB_PASS', 'DEW}@@h-!jL3_ig(');
+define('DB_NAME', 'aauekpo5_aaujmr');
 
 define('SITE_NAME', 'Ambrose Alli University Journal of Medical Research');
 define('SITE_ABBR', 'AAUJMR');

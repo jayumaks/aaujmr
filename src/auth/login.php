@@ -38,7 +38,7 @@ $page_css   = ['login.css'];
     <meta name="robots" content="noindex,nofollow">
     <title>Login -- <?php echo SITE_NAME; ?></title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Instrument+Sans:wght@400..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="<?= SITE_URL ?>/assets/css/index.css">
     <link rel="stylesheet" href="<?= SITE_URL ?>/assets/css/login.css">

@@ -17,14 +17,14 @@
     border-radius: var(--radius-lg);
     padding: 1.25rem;
     position: sticky;
-    top: 70px;
+    top: 76px;
 }
 
 .sidebar-heading {
     font-size: 0.8rem;
     font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
+    text-transform: none;
+    letter-spacing: 0;
     color: var(--text-muted);
     margin-bottom: 0.875rem;
     display: flex;
@@ -74,7 +74,7 @@
 }
 
 .cat-link.active .cat-count {
-    background: rgba(217, 74, 7, 0.12);
+    background: rgba(5, 149, 168, 0.14);
     color: var(--maroon);
 }
 
@@ -94,15 +94,14 @@
 .article-card {
     background: var(--bg-card);
     border: 1px solid var(--border-light);
-    border-left: 3px solid var(--gold);
     border-radius: var(--radius-lg);
-    padding: 1.5rem;
-    transition: box-shadow var(--transition), transform var(--transition);
+    padding: 1.6rem 1.75rem;
+    transition: border-color var(--transition), box-shadow var(--transition);
 }
 
 .article-card:hover {
+    border-color: var(--teal);
     box-shadow: var(--shadow);
-    transform: translateX(3px);
 }
 
 .article-card .badge {
@@ -111,10 +110,11 @@
 
 .article-title {
     font-family: var(--font-heading);
-    font-size: 1.1rem;
+    font-size: 1.25rem;
     font-weight: 600;
+    letter-spacing: -0.02em;
     margin-bottom: 0.5rem;
-    line-height: 1.35;
+    line-height: 1.28;
 }
 
 .article-title a {
@@ -138,12 +138,12 @@
 }
 
 .article-abstract {
-    font-size: 0.88rem;
-    color: var(--text-muted);
-    line-height: 1.6;
-    margin-bottom: 0.875rem;
-    border-left: 2px solid var(--border-light);
-    padding-left: 0.875rem;
+    font-family: var(--font-serif);
+    font-size: 1rem;
+    color: var(--text-secondary);
+    line-height: 1.65;
+    margin-bottom: 1rem;
+    max-width: 72ch;
 }
 
 .article-meta {
@@ -216,7 +216,7 @@
     height: 2.25rem;
     padding: 0 0.75rem;
     border: 1px solid var(--border);
-    border-radius: 4px;
+    border-radius: var(--radius-pill);
     font-size: 0.875rem;
     color: var(--text);
     text-decoration: none;
@@ -229,8 +229,8 @@
 }
 
 .page-btn.active {
-    background: var(--maroon);
-    border-color: var(--maroon);
+    background: var(--ink);
+    border-color: var(--ink);
     color: #fff;
     font-weight: 600;
     pointer-events: none;

@@ -64,7 +64,7 @@ try {
     <link rel="icon" href="<?= SITE_URL ?>/favicon/favicon.png" type="image/png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400..600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="<?= SITE_URL ?>/assets/css/index.css">
     <link rel="stylesheet" href="<?= SITE_URL ?>/assets/css/header.css">
@@ -75,7 +75,8 @@ try {
 </head>
 <body>
 
-<header class="site-header">
+<header class="site-header" id="site-header">
+  <div class="header-collapse"><div class="header-collapse-inner">
     <div class="header-top">
         <div class="container">
             <span class="header-faculty">
@@ -96,7 +97,7 @@ try {
             <a href="<?= SITE_URL ?>/" class="brand-link">
                 <span class="brand-abbr">AAUJMR</span>
                 <div class="brand-info">
-                    <span class="brand-title">AMBROSE ALLI UNIVERSITY JOURNAL OF MEDICAL RESEARCH</span>
+                    <span class="brand-title">Ambrose Alli University Journal of Medical Research</span>
                     <?php if (SITE_ISSN): ?>
                         <span class="brand-issn">ISSN: <?= e(SITE_ISSN) ?></span>
                     <?php endif; ?>
@@ -104,9 +105,11 @@ try {
             </a>
         </div>
     </div>
+  </div></div>
 
     <nav class="main-nav" aria-label="Main navigation">
         <div class="container">
+            <a href="<?= SITE_URL ?>/" class="nav-mini-brand" aria-label="AAUJMR home">AAUJMR</a>
             <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
                 <span></span><span></span><span></span>
             </button>
@@ -159,6 +162,22 @@ try {
             btn.setAttribute('aria-expanded', open);
         });
     });
+    // Fold the faculty strip + brand row once the page is scrolled
+    const hdr = document.getElementById('site-header');
+    if (hdr) {
+        let ticking = false;
+        const update = function () {
+            const y = window.scrollY;
+            const roomToScroll = document.documentElement.scrollHeight - window.innerHeight > 500;
+            if (!hdr.classList.contains('is-scrolled') && y > 90 && roomToScroll) hdr.classList.add('is-scrolled');
+            else if (hdr.classList.contains('is-scrolled') && y < 8) hdr.classList.remove('is-scrolled');
+            ticking = false;
+        };
+        window.addEventListener('scroll', function () {
+            if (!ticking) { ticking = true; requestAnimationFrame(update); }
+        }, { passive: true });
+        update();
+    }
     document.addEventListener('click', function () {
         document.querySelectorAll('.has-dropdown.open').forEach(function (item) {
             item.classList.remove('open');

@@ -21,8 +21,8 @@
 .detail-label {
     font-size: 0.78rem;
     font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
+    text-transform: none;
+    letter-spacing: 0;
     color: var(--gold-dark);
     margin-bottom: 0.625rem;
     display: flex;
@@ -37,14 +37,15 @@
 }
 
 .abstract-text {
-    background: var(--bg-alt);
-    border-left: 3px solid var(--gold);
-    padding: 1.25rem 1.5rem;
-    border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
-    font-size: 0.975rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-left: 3px solid var(--sky);
+    padding: 1.5rem 1.75rem;
+    border-radius: 4px var(--radius-lg) var(--radius-lg) 4px;
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
     color: var(--text-secondary);
-    line-height: 1.75;
-    font-style: italic;
+    line-height: 1.8;
 }
 
 /* ─── PDF block ──────────────────────────────────────────────── */
@@ -74,7 +75,7 @@
 /* ─── Meta sidebar ───────────────────────────────────────────── */
 .article-meta-sidebar {
     position: sticky;
-    top: 70px;
+    top: 76px;
 }
 
 .meta-card {
@@ -86,13 +87,14 @@
 }
 
 .meta-card-title {
-    background: var(--maroon);
+    background: var(--ink);
     color: #fff;
     padding: 0.875rem 1.25rem;
-    font-size: 0.875rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
+    font-size: 0.95rem;
+    font-weight: 600;
+    font-family: var(--font-heading);
+    text-transform: none;
+    letter-spacing: 0;
 }
 
 .meta-list {
@@ -105,8 +107,8 @@
 .meta-list dt {
     font-size: 0.78rem;
     font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
+    text-transform: none;
+    letter-spacing: 0;
     color: var(--text-muted);
     align-self: baseline;
     padding-top: 0.1rem;

@@ -32,8 +32,8 @@
 
 .admin-stat-label {
     font-size: 0.8rem;
-    text-transform: uppercase;
-    letter-spacing: 0.07em;
+    text-transform: none;
+    letter-spacing: 0;
     color: var(--text-muted);
     display: flex;
     align-items: center;
@@ -81,14 +81,14 @@
 }
 
 .admin-table thead th {
-    background: var(--maroon);
+    background: var(--ink);
     color: #fff;
     padding: 0.75rem 1rem;
     text-align: left;
     font-weight: 600;
     font-size: 0.78rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
+    text-transform: none;
+    letter-spacing: 0;
     white-space: nowrap;
 }
 
@@ -136,9 +136,9 @@
 }
 
 .icon-btn.danger:hover {
-    border-color: #b91c1c;
-    color: #b91c1c;
-    background: #fef2f2;
+    border-color: #b4233f;
+    color: #b4233f;
+    background: #fef2f3;
 }
 
 /* ─── Bulk actions bar ───────────────────────────────────────── */

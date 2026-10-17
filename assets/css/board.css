@@ -18,8 +18,8 @@
 .board-role-heading {
     font-size: 0.8rem;
     font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
+    text-transform: none;
+    letter-spacing: 0;
     color: var(--text-muted);
     margin-bottom: 1rem;
     display: flex;
@@ -59,8 +59,8 @@
     width: 44px;
     height: 44px;
     border-radius: 50%;
-    background: var(--maroon);
-    color: #fff;
+    background: var(--ink);
+    color: var(--cyan);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -88,8 +88,8 @@
 .board-role-title {
     font-size: 0.78rem;
     font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
+    text-transform: none;
+    letter-spacing: 0;
     color: var(--gold-dark);
 }
 

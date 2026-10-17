@@ -17,9 +17,9 @@
     color: var(--text-muted);
     line-height: 1.65;
     padding: 0.875rem 1.1rem;
-    background: var(--bg-alt);
-    border-left: 3px solid var(--gold);
-    border-radius: 0 var(--radius) var(--radius) 0;
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius);
     margin-bottom: var(--space-lg);
 }
 
@@ -56,9 +56,8 @@
 }
 
 .issue-card:hover {
-    border-color: var(--maroon-light);
+    border-color: var(--teal);
     box-shadow: var(--shadow);
-    transform: translateY(-3px);
     color: inherit;
 }
 
@@ -68,9 +67,9 @@
 
 .issue-vol {
     font-family: var(--font-heading);
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: var(--maroon);
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: var(--ink);
     margin-bottom: 0.2rem;
 }
 

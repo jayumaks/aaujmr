@@ -35,7 +35,7 @@
     color: var(--maroon-dark);
     margin-bottom: 1rem;
     padding-bottom: 0.5rem;
-    border-bottom: 2px solid var(--gold-faint);
+    border-bottom: 1px solid var(--border-light);
     display: flex;
     align-items: center;
     gap: 0.6rem;
@@ -47,8 +47,11 @@
 }
 
 .prose-section p {
+    font-family: var(--font-serif);
+    font-size: 1.08rem;
     color: var(--text-secondary);
     line-height: 1.75;
+    max-width: 70ch;
     margin-bottom: 0.875rem;
 }
 
@@ -63,10 +66,10 @@
 }
 
 .note {
-    background: var(--bg-alt);
-    border-left: 3px solid var(--gold);
-    padding: 0.75rem 1rem;
-    border-radius: 0 var(--radius) var(--radius) 0;
+    background: var(--tint-sky);
+    border-left: 3px solid var(--sky);
+    padding: 0.8rem 1.1rem;
+    border-radius: 4px var(--radius) var(--radius) 4px;
     font-size: 0.875rem;
     color: var(--text-secondary);
     display: flex;
@@ -137,7 +140,7 @@
 }
 
 .fee-table th {
-    background: var(--maroon);
+    background: var(--ink);
     color: #fff;
     padding: 0.75rem 1rem;
     text-align: left;
@@ -178,7 +181,7 @@
 }
 
 .channel-card:hover {
-    border-color: var(--maroon-light);
+    border-color: var(--teal);
     box-shadow: var(--shadow);
     color: inherit;
 }
@@ -201,8 +204,8 @@
 .channel-label {
     font-size: 0.75rem;
     font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
+    text-transform: none;
+    letter-spacing: 0;
     color: var(--text-muted);
     margin-bottom: 0.2rem;
 }
@@ -225,8 +228,8 @@
 .contact-block dt {
     font-weight: 700;
     font-size: 0.8rem;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
+    text-transform: none;
+    letter-spacing: 0;
     color: var(--text-muted);
     margin-top: 0.75rem;
 }
@@ -246,7 +249,7 @@
 /* ─── Sidebar widgets ────────────────────────────────────────── */
 .prose-sidebar {
     position: sticky;
-    top: 70px;
+    top: 76px;
     display: flex;
     flex-direction: column;
     gap: 1.25rem;
@@ -260,14 +263,14 @@
 }
 
 .sidebar-widget h3 {
-    background: var(--maroon);
+    background: var(--ink);
     color: #fff;
     padding: 0.75rem 1.1rem;
-    font-size: 0.8rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.07em;
-    font-family: var(--font-body);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: none;
+    letter-spacing: 0;
+    font-family: var(--font-heading);
 }
 
 .sidebar-widget ul {
@@ -316,8 +319,8 @@
     border-radius: var(--radius);
     font-size: 0.75rem;
     font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
+    text-transform: none;
+    letter-spacing: 0;
     margin-bottom: 1.25rem;
 }
 

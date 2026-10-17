@@ -30,25 +30,34 @@ try {
 <section class="hero">
     <div class="container">
         <div class="hero-content">
-            <p class="hero-eyebrow">
-                <i class="fas fa-microscope"></i> International Scope &bull; Peer-Reviewed &bull; Published Annually (June)
-            </p>
-            <h1 class="hero-title">AMBROSE ALLI UNIVERSITY JOURNAL OF MEDICAL RESEARCH (AAUJMR)</h1>
+            <ul class="hero-stickers">
+                <li><i class="fas fa-microscope"></i> Peer-reviewed</li>
+                <li><i class="fas fa-globe"></i> International scope</li>
+                <li><i class="fas fa-calendar-check"></i> Published every June</li>
+            </ul>
+            <h1 class="hero-title">Ambrose Alli University Journal of Medical Research</h1>
             <p class="hero-subtitle">
                 A Publication of the Faculty of Basic Medical Sciences, College of Medicine,
                 Ambrose Alli University, Ekpoma, Nigeria
             </p>
             <div class="hero-actions">
-                <a href="#/current-issue" class="btn btn-gold">
+                <a href="<?= SITE_URL ?>/current-issue" class="btn btn-gold">
                     <i class="fas fa-newspaper"></i> Browse Current Issue
                 </a>
-                <a href="#/submit" class="btn btn-outline-white">
+                <a href="<?= SITE_URL ?>/submit" class="btn btn-outline-white">
                     <i class="fas fa-paper-plane"></i> Submit Manuscript
                 </a>
             </div>
         </div>
     </div>
-    <div class="hero-deco" aria-hidden="true"></div>
+    <?php if (!empty($latest['volume'])): ?>
+    <a class="hero-issue" href="<?= SITE_URL ?>/current-issue">
+        <span class="hero-issue-label">Latest issue</span>
+        <span class="hero-issue-vol">Vol. <?= e((string)$latest['volume']) ?></span>
+        <span class="hero-issue-year"><?= e((string)$latest['year']) ?></span>
+        <span class="hero-issue-go">Read now</span>
+    </a>
+    <?php endif; ?>
 </section>
 
 <!-- Stats bar -->
@@ -119,7 +128,7 @@ try {
 <section class="content-page" style="padding-top:3rem;padding-bottom:1rem">
     <div class="container">
         <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:1.5rem">
-            <h2 style="font-family:var(--font-head)">Recent Articles</h2>
+            <h2 style="font-family:var(--font-heading)">Recent Articles</h2>
             <a href="<?= SITE_URL ?>/archive" class="btn btn-outline btn-sm"><i class="fas fa-archive"></i> All Issues</a>
         </div>
         <ol class="article-list" style="counter-reset:none" reversed>
@@ -160,10 +169,10 @@ try {
                 <p>Review our author guidelines and submit your manuscript today.</p>
             </div>
             <div class="cta-btns">
-                <a href="#/guide" class="btn btn-gold">
+                <a href="<?= SITE_URL ?>/guide" class="btn btn-gold">
                     <i class="fas fa-book-open"></i> Author Guidelines
                 </a>
-                <a href="#/submit" class="btn btn-outline-white">
+                <a href="<?= SITE_URL ?>/submit" class="btn btn-outline-white">
                     <i class="fas fa-paper-plane"></i> Submit Now
                 </a>
             </div>

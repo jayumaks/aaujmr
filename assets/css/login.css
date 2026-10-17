@@ -1,182 +1,98 @@
 /* ================================================================
-   AAUJMR — Login Page (login.css)
-   Standalone page — no shared header/footer
+   AAUJMR — Login page (login.css)
+   Loads after index.css, so tokens and .btn / .form-control apply.
 ================================================================ */
 
-*,
-*::before,
-*::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+html, body { height: 100%; }
 
-:root {
-    --maroon:        #D94A07;
-    --maroon-dark:   #A83605;
-    --gold:          #C9A84C;
-    --gold-dark:     #A8832E;
-    --bg:            #FDFBF7;
-    --bg-card:       #FFFFFF;
-    --border:        #E8D5C0;
-    --text-primary:  #231A0C;
-    --text-secondary:#5C4835;
-    --radius:        6px;
-    --radius-lg:     12px;
-    --shadow-lg:     0 6px 28px rgba(217, 74, 7, 0.18);
-    --transition:    0.22s ease;
-    --font-heading:  'Playfair Display', Georgia, serif;
-    --font-body:     'Source Sans 3', Arial, sans-serif;
-}
-
-html, body {
-    height: 100%;
-    font-family: var(--font-body);
-    color: var(--text-primary);
-}
-
-/* ─── Full-page centered layout ──────────────────────────────── */
 .login-body {
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 2rem 1rem;
-    background: linear-gradient(135deg, var(--maroon-dark) 0%, var(--maroon) 100%);
+    background:
+        radial-gradient(600px 360px at 90% -10%, rgba(37, 230, 255, 0.2), transparent 70%),
+        radial-gradient(520px 320px at -10% 110%, rgba(118, 170, 248, 0.16), transparent 70%),
+        var(--ink);
 }
 
-.login-wrapper {
-    width: 100%;
-    max-width: 400px;
-}
+.login-wrapper { width: 100%; max-width: 420px; }
 
-/* ─── Brand header ───────────────────────────────────────────── */
 .login-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
     text-align: center;
     margin-bottom: 2rem;
 }
 
-.login-brand-abbr {
-    display: block;
-    font-family: var(--font-heading);
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: var(--gold);
-    line-height: 1;
-    margin-bottom: 0.3rem;
-}
-
-.login-brand-name {
-    display: block;
-    font-size: 0.85rem;
-    color: rgba(255,255,255,0.75);
-    letter-spacing: 0.04em;
-    margin-bottom: 0.75rem;
-}
-
-.login-brand-badge {
+/* the sticker, again */
+.login-abbr {
     display: inline-block;
-    background: rgba(255,255,255,0.12);
-    color: rgba(255,255,255,0.9);
-    font-size: 0.72rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    padding: 0.2rem 0.75rem;
-    border-radius: 20px;
-    border: 1px solid rgba(255,255,255,0.2);
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1;
+    color: var(--ink);
+    background: var(--sky);
+    border: 3px solid #fff;
+    border-radius: 16px;
+    padding: 0.45rem 0.9rem 0.5rem;
+    transform: rotate(-4deg);
+    box-shadow: 0 1px 0 rgba(8, 16, 20, 0.5), 0 14px 24px -8px rgba(0, 0, 0, 0.6);
+    margin-bottom: 0.9rem;
 }
 
-/* ─── Card ───────────────────────────────────────────────────── */
+.login-journal-name {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.85);
+    max-width: 30ch;
+    line-height: 1.3;
+}
+
+.login-faculty {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--cyan);
+    background: rgba(37, 230, 255, 0.1);
+    border: 1px solid rgba(37, 230, 255, 0.25);
+    padding: 0.2rem 0.8rem;
+    border-radius: var(--radius-pill);
+}
+
 .login-card {
     background: var(--bg-card);
-    border-radius: var(--radius-lg);
+    border-radius: 24px;
     box-shadow: var(--shadow-lg);
-    padding: 2rem;
+    padding: 2.25rem 2rem 2rem;
 }
 
-.login-card h2 {
-    font-family: var(--font-heading);
-    font-size: 1.3rem;
-    color: var(--maroon-dark);
+.login-card h1 {
+    font-size: 1.6rem;
     margin-bottom: 1.5rem;
 }
 
-/* ─── Form elements ──────────────────────────────────────────── */
-.form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 0.4rem;
-    margin-bottom: 1.25rem;
-}
+.login-card .form-group { margin-bottom: 1.2rem; }
 
-.form-group label {
-    font-weight: 600;
-    font-size: 0.9rem;
-    color: var(--text-secondary);
-}
-
-.form-control {
-    width: 100%;
-    padding: 0.65rem 0.875rem;
-    font-family: var(--font-body);
-    font-size: 0.95rem;
-    color: var(--text-primary);
-    background: var(--bg-card);
-    border: 1.5px solid var(--border);
-    border-radius: var(--radius);
-    transition: border-color var(--transition), box-shadow var(--transition);
-    outline: none;
-}
-
-.form-control:focus {
-    border-color: var(--maroon);
-    box-shadow: 0 0 0 3px rgba(217, 74, 7, 0.10);
-}
-
-/* ─── Error alert ────────────────────────────────────────────── */
-.login-error {
-    background: #fef2f2;
-    color: #991b1b;
-    border: 1px solid #fecaca;
-    border-radius: var(--radius);
-    padding: 0.75rem 1rem;
-    font-size: 0.9rem;
-    margin-bottom: 1.25rem;
-}
-
-/* ─── Submit button ──────────────────────────────────────────── */
 .login-submit {
     width: 100%;
-    padding: 0.75rem 1.5rem;
-    background: var(--maroon);
-    color: #fff;
-    border: none;
-    border-radius: var(--radius);
-    font-family: var(--font-body);
+    justify-content: center;
+    padding: 0.85rem 1.5rem;
     font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background var(--transition), transform var(--transition);
-    margin-top: 0.5rem;
+    margin-top: 0.4rem;
 }
 
-.login-submit:hover {
-    background: var(--maroon-dark);
-    transform: translateY(-1px);
-}
-
-/* ─── Back link ──────────────────────────────────────────────── */
 .login-back {
+    display: block;
     text-align: center;
-    margin-top: 1.25rem;
-    font-size: 0.875rem;
+    margin-top: 1.5rem;
+    font-size: 0.88rem;
+    color: rgba(255, 255, 255, 0.65);
 }
 
-.login-back a {
-    color: rgba(255,255,255,0.75);
-    text-decoration: none;
-    transition: color var(--transition);
-}
-
-.login-back a:hover { color: var(--gold); }
+.login-back:hover { color: var(--cyan); }

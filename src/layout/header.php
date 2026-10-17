@@ -5,6 +5,14 @@
 
 require_once __DIR__ . '/../config/config.php';
 
+// Cache-busting: appends the file's modified time so browsers/CDNs fetch fresh CSS after every update
+if (!function_exists('asset_url')) {
+    function asset_url(string $path): string {
+        $file = __DIR__ . '/../../' . ltrim($path, '/');
+        return SITE_URL . '/' . ltrim($path, '/') . (is_file($file) ? '?v=' . filemtime($file) : '');
+    }
+}
+
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
@@ -66,11 +74,11 @@ try {
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400..600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="stylesheet" href="<?= SITE_URL ?>/assets/css/index.css">
-    <link rel="stylesheet" href="<?= SITE_URL ?>/assets/css/header.css">
-    <link rel="stylesheet" href="<?= SITE_URL ?>/assets/css/footer.css">
+    <link rel="stylesheet" href="<?= e(asset_url('assets/css/index.css')) ?>">
+    <link rel="stylesheet" href="<?= e(asset_url('assets/css/header.css')) ?>">
+    <link rel="stylesheet" href="<?= e(asset_url('assets/css/footer.css')) ?>">
     <?php foreach ((array)($page_css ?? []) as $css): ?>
-        <link rel="stylesheet" href="<?= SITE_URL ?>/assets/css/<?= e($css) ?>">
+        <link rel="stylesheet" href="<?= e(asset_url('assets/css/' . $css)) ?>">
     <?php endforeach; ?>
 </head>
 <body>
@@ -171,6 +179,14 @@ try {
             const roomToScroll = document.documentElement.scrollHeight - window.innerHeight > 500;
             if (!hdr.classList.contains('is-scrolled') && y > 90 && roomToScroll) hdr.classList.add('is-scrolled');
             else if (hdr.classList.contains('is-scrolled') && y < 8) hdr.classList.remove('is-scrolled');
+            // Safety net: if the host's CSS/markup stops position:sticky from working,
+            // pin the header with fixed positioning and keep its place with a spacer.
+            if (y > 200 && !hdr.classList.contains('is-pinned') && hdr.getBoundingClientRect().top < -1) {
+                const spacer = document.createElement('div');
+                spacer.style.height = hdr.offsetHeight + 'px';
+                hdr.parentNode.insertBefore(spacer, hdr);
+                hdr.classList.add('is-pinned');
+            }
             ticking = false;
         };
         window.addEventListener('scroll', function () {

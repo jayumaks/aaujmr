@@ -56,7 +56,7 @@
 }
 
 .issue-card:hover {
-    border-color: var(--teal);
+    border-color: var(--blue-deep);
     box-shadow: var(--shadow);
     color: inherit;
 }

@@ -74,7 +74,7 @@
 }
 
 .cat-link.active .cat-count {
-    background: rgba(5, 149, 168, 0.14);
+    background: rgba(52, 87, 138, 0.14);
     color: var(--maroon);
 }
 
@@ -100,7 +100,7 @@
 }
 
 .article-card:hover {
-    border-color: var(--teal);
+    border-color: var(--blue-deep);
     box-shadow: var(--shadow);
 }
 

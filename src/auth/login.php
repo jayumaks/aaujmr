@@ -40,8 +40,8 @@ $page_css   = ['login.css'];
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Instrument+Sans:wght@400..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="stylesheet" href="<?= SITE_URL ?>/assets/css/index.css">
-    <link rel="stylesheet" href="<?= SITE_URL ?>/assets/css/login.css">
+    <link rel="stylesheet" href="<?= SITE_URL ?>/assets/css/index.css?v=<?= @filemtime(__DIR__ . '/../../assets/css/index.css') ?>">
+    <link rel="stylesheet" href="<?= SITE_URL ?>/assets/css/login.css?v=<?= @filemtime(__DIR__ . '/../../assets/css/login.css') ?>">
 </head>
 <body class="login-body">
 <div class="login-wrapper">

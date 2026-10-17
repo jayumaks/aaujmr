@@ -67,7 +67,7 @@
 
 .note {
     background: var(--tint-sky);
-    border-left: 3px solid var(--sky);
+    border-left: 3px solid var(--blue);
     padding: 0.8rem 1.1rem;
     border-radius: 4px var(--radius) var(--radius) 4px;
     font-size: 0.875rem;
@@ -181,7 +181,7 @@
 }
 
 .channel-card:hover {
-    border-color: var(--teal);
+    border-color: var(--blue-deep);
     box-shadow: var(--shadow);
     color: inherit;
 }

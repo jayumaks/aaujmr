@@ -16,35 +16,37 @@
 
 /* ─── Design tokens ─────────────────────────────────────────── */
 :root {
-    /* Core palette */
-    --ink:           #081014;   /* near-black, faintly teal */
-    --ink-2:         #0f1c22;   /* raised dark surface */
-    --ink-3:         #1a2b33;   /* dark borders / hovers */
-    --sky:           #76aaf8;   /* soft blue — highlights, stickers */
-    --teal:          #0595a8;   /* brand teal */
-    --teal-deep:     #067384;   /* teal for text + buttons on light (5.9:1) */
-    --cyan:          #25e6ff;   /* used sparingly, mostly on dark */
+    /* Core palette — taken from the journal cover */
+    --ink:           #0f1830;   /* deep navy-black (crest blue, darkened) */
+    --ink-2:         #172444;
+    --ink-3:         #263760;
+    --blue:          #7092bf;   /* cover steel blue */
+    --blue-deep:     #34578a;   /* same hue, dark enough for text + buttons (7:1) */
+    --lav:           #c7bfe6;   /* cover lavender */
+    --lav-soft:      #ece9f7;
+    --red:           #d9222b;   /* cover red — accents + calls to action */
+    --red-deep:      #b31a22;
 
     /* Light surfaces */
-    --bg:            #f5f8fa;
+    --bg:            #f7f6fb;
     --bg-card:       #ffffff;
-    --bg-alt:        #edf3f7;
-    --tint:          rgba(5, 149, 168, 0.08);
-    --tint-sky:      rgba(118, 170, 248, 0.16);
+    --bg-alt:        #efedf8;
+    --tint:          rgba(52, 87, 138, 0.09);
+    --tint-sky:      rgba(199, 191, 230, 0.35);
 
     /* Text */
-    --text-primary:   #081014;
-    --text-secondary: #3a4b54;
-    --text-muted:     #66767f;
+    --text-primary:   #0f1830;
+    --text-secondary: #3d4863;
+    --text-muted:     #6a7490;
 
     /* Lines */
-    --border:        #d6e1e8;
-    --border-light:  #e5edf2;
+    --border:        #d9d8ea;
+    --border-light:  #e8e6f3;
 
     /* Shadows — cool, soft, low */
-    --shadow-sm:  0 1px 2px rgba(8, 16, 20, 0.05);
-    --shadow:     0 2px 4px rgba(8, 16, 20, 0.04), 0 10px 24px -8px rgba(8, 16, 20, 0.12);
-    --shadow-lg:  0 4px 8px rgba(8, 16, 20, 0.05), 0 22px 44px -12px rgba(8, 16, 20, 0.22);
+    --shadow-sm:  0 1px 2px rgba(15, 24, 48, 0.05);
+    --shadow:     0 2px 4px rgba(15, 24, 48, 0.04), 0 10px 24px -8px rgba(15, 24, 48, 0.14);
+    --shadow-lg:  0 4px 8px rgba(15, 24, 48, 0.05), 0 22px 44px -12px rgba(15, 24, 48, 0.26);
 
     /* Type */
     --font-heading: 'Bricolage Grotesque', 'Helvetica Neue', Arial, sans-serif;
@@ -68,13 +70,13 @@
     /* ── Legacy aliases ──────────────────────────────────────
        Older stylesheets used these names (originally orange/maroon).
        They now map onto the new palette so nothing is left behind. */
-    --maroon:        var(--teal-deep);
+    --maroon:        var(--blue-deep);
     --maroon-dark:   var(--ink);
-    --maroon-light:  var(--teal);
+    --maroon-light:  var(--blue);
     --maroon-faint:  var(--tint);
-    --gold:          var(--sky);
-    --gold-light:    var(--cyan);
-    --gold-dark:     var(--teal-deep);
+    --gold:          var(--lav);
+    --gold-light:    var(--lav);
+    --gold-dark:     var(--blue-deep);
     --gold-faint:    var(--tint-sky);
     --text:          var(--text-primary);
 }
@@ -102,7 +104,7 @@ body {
 main { flex: 1; }
 
 a {
-    color: var(--teal-deep);
+    color: var(--blue-deep);
     text-decoration: none;
     transition: color var(--transition);
 }
@@ -111,10 +113,10 @@ a:hover { color: var(--ink); }
 
 img { max-width: 100%; height: auto; }
 
-::selection { background: var(--sky); color: var(--ink); }
+::selection { background: var(--blue); color: var(--ink); }
 
 :focus-visible {
-    outline: 2px solid var(--teal);
+    outline: 2px solid var(--blue-deep);
     outline-offset: 3px;
     border-radius: 4px;
 }
@@ -170,18 +172,18 @@ p { text-wrap: pretty; }
     color: #fff;
 }
 .btn-primary:hover {
-    background: var(--teal-deep);
+    background: var(--blue-deep);
     color: #fff;
 }
 
 /* Bright button for dark backgrounds */
 .btn-gold {
-    background: var(--cyan);
-    color: var(--ink);
+    background: var(--red);
+    color: #fff;
 }
 .btn-gold:hover {
-    background: #fff;
-    color: var(--ink);
+    background: var(--red-deep);
+    color: #fff;
 }
 
 .btn-outline {
@@ -212,8 +214,8 @@ p { text-wrap: pretty; }
 /* ─── Page banner (shared across inner pages) ───────────────── */
 .page-banner {
     background:
-        radial-gradient(640px 220px at 88% -20%, rgba(37, 230, 255, 0.18), transparent 70%),
-        radial-gradient(520px 200px at 0% 120%, rgba(118, 170, 248, 0.14), transparent 70%),
+        radial-gradient(640px 240px at 90% -30%, rgba(199, 191, 230, 0.32), transparent 70%),
+        radial-gradient(560px 220px at 0% 130%, rgba(112, 146, 191, 0.4), transparent 70%),
         var(--ink);
     color: #fff;
     padding: 3.25rem 0 2.75rem;
@@ -226,7 +228,7 @@ p { text-wrap: pretty; }
     position: absolute;
     inset: auto 0 0 0;
     height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(118, 170, 248, 0.5), transparent);
+    background: linear-gradient(90deg, transparent, rgba(112, 146, 191, 0.5), transparent);
 }
 
 .page-banner h1,
@@ -243,7 +245,7 @@ p { text-wrap: pretty; }
 }
 
 .page-banner a { color: rgba(255, 255, 255, 0.75); }
-.page-banner a:hover { color: var(--cyan); }
+.page-banner a:hover { color: #fff; }
 .page-banner .btn-outline { color: #fff; border-color: rgba(255, 255, 255, 0.35); }
 .page-banner .btn-outline:hover { background: #fff; color: var(--ink); border-color: #fff; }
 
@@ -278,13 +280,13 @@ p { text-wrap: pretty; }
 .badge-gold {
     background: var(--tint-sky);
     color: #214f94;
-    border: 1px solid rgba(118, 170, 248, 0.45);
+    border: 1px solid rgba(112, 146, 191, 0.45);
 }
 
 .badge-maroon {
     background: var(--tint);
-    color: var(--teal-deep);
-    border: 1px solid rgba(5, 149, 168, 0.25);
+    color: var(--blue-deep);
+    border: 1px solid rgba(52, 87, 138, 0.25);
 }
 
 /* ─── Forms ──────────────────────────────────────────────────── */
@@ -302,7 +304,7 @@ p { text-wrap: pretty; }
 
 .form-group label.required::after {
     content: ' *';
-    color: var(--teal-deep);
+    color: var(--blue-deep);
 }
 
 .form-control {
@@ -319,8 +321,8 @@ p { text-wrap: pretty; }
 
 .form-control:focus {
     outline: none;
-    border-color: var(--teal);
-    box-shadow: 0 0 0 4px rgba(37, 230, 255, 0.2);
+    border-color: var(--blue-deep);
+    box-shadow: 0 0 0 4px rgba(112, 146, 191, 0.28);
 }
 
 textarea.form-control { resize: vertical; min-height: 110px; }
@@ -347,7 +349,7 @@ select.form-control   { cursor: pointer; }
 
 .divider-gold {
     height: 1px;
-    background: linear-gradient(90deg, transparent, var(--sky), transparent);
+    background: linear-gradient(90deg, transparent, var(--blue), transparent);
     margin: var(--space-md) 0;
 }
 

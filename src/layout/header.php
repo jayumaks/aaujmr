@@ -103,7 +103,7 @@ try {
     <div class="header-brand">
         <div class="container">
             <a href="<?= SITE_URL ?>/" class="brand-link">
-                <span class="brand-abbr">AAUJMR</span>
+                <span class="brand-abbr"></span>
                 <div class="brand-info">
                     <span class="brand-title">Ambrose Alli University Journal of Medical Research</span>
                     <?php if (SITE_ISSN): ?>
